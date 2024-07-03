@@ -1,0 +1,158 @@
+@use 'base';
+
+* {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: base.$background;
+    display: flex;
+    flex-direction: row;
+}
+.sidebarContainer{
+    margin-left: 3vh;
+    width: 20%;
+    height: 100vh;
+    border-right: solid rgb(221, 220, 220) 1px;
+
+    h1 {
+        margin-top: 2vh;
+    }
+}
+ul li {
+    margin: .5vh;
+    padding: 1vh;
+    cursor: pointer;
+    font-size: .9rem;
+    opacity: 80%;
+    border-radius: 15px;
+    list-style: none;
+    width: 80%;
+}
+.categoryContainers {
+    margin-top: 4vh;
+    
+    p {
+        font-size: .7rem;
+        opacity: 60%;
+    }
+}
+li:hover {
+    background-color: base.$highlighter;
+    font-weight: bold;
+    opacity: 90%;
+}
+
+.dashboardContainer{
+    display: flex;
+    @extend %dashboardCsize;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    
+}
+button{
+    @extend %btn;
+}
+.quickStatsContainer{
+    background-color: base.$whitesmoke;
+    display: flex;
+    width: 90%;
+    img{
+        @extend %imgsize;
+    }
+    .leadsContainer, .trialSContainer, .trialAContainer{
+        @extend %quickstatscard;
+        
+    }
+}
+.dashboard-top{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    width: 80%;
+    align-items: center;
+    h2{
+        font-size: .9rem;
+        
+    }
+}
+.quickstatscontainer-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.detailedStatsContainer {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 2.5vh;
+    width: 85%;
+    height: 80%;
+    margin: 2vh 0 0 -5vh;
+}
+.seeMoreContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    padding: 1em;
+    position: relative;
+    left: 10px;
+}
+.seeMore {
+    color: base.$purpletext;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+.detailedstatscard {
+    @extend %detailedstatscard;
+}
+.greenArrow {
+    color: base.$greenpercentcolor;
+}
+.redArrow {
+    color: base.$redpercentcolor;
+}
+.progressBarContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: .7em
+}
+.progressBar {
+    @extend %progressBar;
+}
+.dataContainer1{
+    padding: .4em;
+    width: 90%;
+    background-color: base.$purplebar;
+    border-radius: 5px;
+    opacity: 70%;
+}
+.dataContainer2{
+   @extend %dataContainers;
+    width: 50%;
+    
+}
+.dataContainer3{
+    @extend %dataContainers;
+    width: 75%;
+    
+}
+.dataContainer4{
+    @extend %dataContainers;
+    width: 25%;
+    
+}
+.dataContainer5{
+    @extend %dataContainers;
+    width: 45%;
+    
+}
+.dataInput{
+    color: base.$purpletext;
+    margin-right: 10px;
+}
+.dataTitle{
+    opacity: 100%;
+}
